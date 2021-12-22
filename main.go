@@ -46,7 +46,7 @@ func main() {
 // gen sub command
 type gencommand struct {
 	*cli.Command
-	in        string
+	in        mFlags
 	out       string
 	data      string
 	help      bool
@@ -64,7 +64,7 @@ type initcommand struct {
 
 func init() {
 	gen := &gencommand{Command: cli.NewCommand("gen", "Process an emd file.", Generate)}
-	gen.Set.StringVar(&gen.in, "in", "", "Input src file")
+	gen.Set.Var(&gen.in, "in", "Input src file")
 	gen.Set.StringVar(&gen.out, "out", "-", "Output destination, defaults to stdout")
 	gen.Set.StringVar(&gen.data, "data", "", "JSON map of data")
 	gen.Set.BoolVar(&gen.help, "help", false, "Show help")
@@ -117,9 +117,11 @@ func Generate(s cli.Commander) error {
 
 	gen.SetDataMap(data)
 
-	if cmd.in != "" {
-		if err := gen.AddFileTemplate(cmd.in); err != nil {
-			return err
+	if len(cmd.in) != 0 {
+		for _, val := range cmd.in {
+			if err := gen.AddFileTemplate(val); err != nil {
+				return err
+			}
 		}
 	} else {
 		b := tryReadOsStdin()
