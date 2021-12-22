@@ -23,7 +23,7 @@ import (
 )
 
 // VERSION defines the running build id.
-var VERSION = "0.0.0"
+var VERSION = "1.0.2"
 
 var program = cli.NewProgram("emd", VERSION)
 
