@@ -117,13 +117,7 @@ func Generate(s cli.Commander) error {
 
 	gen.SetDataMap(data)
 
-	if len(cmd.in) != 0 {
-		for _, val := range cmd.in {
-			if err := gen.AddFileTemplate(val); err != nil {
-				return err
-			}
-		}
-	} else {
+	if len(cmd.in) == 0 {
 		b := tryReadOsStdin()
 		if b != nil && b.Len() > 0 {
 			gen.AddTemplate(b.String())
@@ -154,8 +148,19 @@ func Generate(s cli.Commander) error {
 		gen.SetDataMap(jData)
 	}
 
-	if err := gen.Execute(out); err != nil {
-		return fmt.Errorf("Generator failed: %v", err)
+	if len(cmd.in) == 0 {
+		if err := gen.Execute(out); err != nil {
+			return fmt.Errorf("Generator failed: %v", err)
+		}
+	} else {
+		for _, val := range cmd.in {
+			if err := gen.AddFileTemplate(val); err != nil {
+				return err
+			}
+			if err := gen.Execute(out); err != nil {
+				return fmt.Errorf("Generator failed: %v", err)
+			}
+		}
 	}
 
 	return nil
