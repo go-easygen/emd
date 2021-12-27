@@ -30,11 +30,35 @@
         "maintenance",
         "infra"
       ]
+    },
+    {
+      "login": "mh-cbon",
+      "name": "mh-cbon",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17096799?v=4",
+      "profile": "https://github.com/mh-cbon",
+      "contributions": [
+        "code",
+        "ideas",
+        "design",
+        "data",
+        "test",
+        "bug",
+        "doc",
+        "blog",
+        "example",
+        "tutorial",
+        "tool",
+        "platform",
+        "review",
+        "question",
+        "maintenance",
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
-  "projectName": "cc2py2",
-  "projectOwner": "go-cc",
+  "projectName": "emd",
+  "projectOwner": "go-easygen",
   "repoType": "github",
   "repoHost": "https://github.com",
   "skipCi": true
