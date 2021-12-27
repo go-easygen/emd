@@ -1,90 +1,37 @@
 # emd
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-[![travis Status](https://travis-ci.org/mh-cbon/emd.svg?branch=master)](https://travis-ci.org/mh-cbon/emd) [![Appveyor Status](https://ci.appveyor.com/api/projects/status/github/mh-cbon/emd?branch=master&svg=true)](https://ci.appveyor.com/project/mh-cbon/emd) [![Go Report Card](https://goreportcard.com/badge/github.com/mh-cbon/emd)](https://goreportcard.com/report/github.com/mh-cbon/emd) [![GoDoc](https://godoc.org/github.com/mh-cbon/emd?status.svg)](http://godoc.org/github.com/mh-cbon/emd) [![MIT License](http://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![MIT License](http://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![GoDoc](https://godoc.org/github.com/go-easygen/emd?status.svg)](http://godoc.org/github.com/go-easygen/emd)
+[![Go Report Card](https://goreportcard.com/badge/github.com/go-easygen/emd)](https://goreportcard.com/report/github.com/go-easygen/emd)
+[![Build Status](https://github.com/go-easygen/emd/actions/workflows/go-release-build.yml/badge.svg?branch=master)](https://github.com/go-easygen/emd/actions/workflows/go-release-build.yml)
+[![PoweredBy WireFrame](https://github.com/go-easygen/wireframe/blob/master/PoweredBy-WireFrame-B.svg)](http://godoc.org/github.com/go-easygen/wireframe)
 
 Enhanced Markdown template processor.
 
 
-See [emd README file](https://raw.githubusercontent.com/mh-cbon/emd/master/README.e.md)
-
-# TOC
-- [Install](#install)
-  - [glide](#glide)
-  - [Bintray](#bintray)
-  - [Chocolatey](#chocolatey)
-  - [linux rpm/deb repository](#linux-rpmdeb-repository)
-  - [linux rpm/deb standalone package](#linux-rpmdeb-standalone-package)
+## TOC
+- [emd - Enhanced Markdown template processor](#emd---enhanced-markdown-template-processor)
 - [Usage](#usage)
-  - [$ emd -help](#-emd--help)
-  - [$ emd gen -help](#-emd-gen--help)
-  - [$ emd init -help](#-emd-init--help)
-- [Cli examples](#cli-examples)
-- [Templates helper](#templates-helper)
-  - [Define data](#define-data)
-  - [Data](#data)
-  - [Functions](#functions)
-  - [Files functions](#files-functions)
-  - [Templates functions](#templates-functions)
-  - [Go utils functions](#go-utils-functions)
-  - [Markdown functions](#markdown-functions)
-  - [Cli functions](#cli-functions)
-  - [Deprecated function](#deprecated-function)
-  - [Templates](#templates)
-- [API example](#api-example)
-  - [> main_test.go](#-main_testgo)
-- [Recipes](#recipes)
-  - [Generate HTML content](#generate-html-content)
-  - [Release the project](#release-the-project)
-- [History](#history)
+  - [$ emd](#-emd)
+  - [Examples](#examples)
+- [Download/install binaries](#downloadinstall-binaries)
+  - [The binary executables](#the-binary-executables)
+  - [Distro package](#distro-package)
+  - [Debian package](#debian-package)
+- [Install Source](#install-source)
+- [Author](#author)
+- [Contributors](#contributors-)
 
-# Install
+## emd - Enhanced Markdown template processor
 
-Check the [release page](https://github.com/mh-cbon/emd/releases)!
+## Usage
 
-#### glide
+### $ emd
 ```sh
-mkdir -p $GOPATH/src/github.com/mh-cbon/emd
-cd $GOPATH/src/github.com/mh-cbon/emd
-git clone https://github.com/mh-cbon/emd.git .
-glide install
-go install
-```
-
-#### Bintray
-```sh
-choco source add -n=mh-cbon -s="https://api.bintray.com/nuget/mh-cbon/choco"
-choco install emd
-```
-
-#### Chocolatey
-```sh
-choco install emd
-```
-
-#### linux rpm/deb repository
-```sh
-wget -O - https://raw.githubusercontent.com/mh-cbon/latest/master/bintray.sh \
-| GH=mh-cbon/emd sh -xe
-# or
-curl -L https://raw.githubusercontent.com/mh-cbon/latest/master/bintray.sh \
-| GH=mh-cbon/emd sh -xe
-```
-
-#### linux rpm/deb standalone package
-```sh
-curl -L https://raw.githubusercontent.com/mh-cbon/latest/master/install.sh \
-| GH=mh-cbon/emd sh -xe
-# or
-wget -q -O - --no-check-certificate \
-https://raw.githubusercontent.com/mh-cbon/latest/master/install.sh \
-| GH=mh-cbon/emd sh -xe
-```
-
-# Usage
-
-#### $ emd -help
-```sh
-emd - 0.0.0
+emd - 1.0.2
 
 Usage
   -h	Show help
@@ -99,243 +46,97 @@ Commands
 	init	Init a basic emd file.
 ```
 
-#### $ emd gen -help
-```sh
-emd - 0.0.0
+### Examples
 
-Command "gen": Process an emd file.
-  -data string
-    	JSON map of data
-  -h	Show help
-  -help
-    	Show help
-  -in string
-    	Input src file
-  -out string
-    	Output destination, defaults to stdout (default "-")
+For examples and further details, check out the [original README](https://github.com/mh-cbon/emd).
+
+## Download/install binaries
+
+- The latest binary executables are available 
+as the result of the Continuous-Integration (CI) process.
+- I.e., they are built automatically right from the source code at every git release by [GitHub Actions](https://docs.github.com/en/actions).
+- There are two ways to get/install such binary executables
+  * Using the **binary executables** directly, or
+  * Using **packages** for your distro
+
+### The binary executables
+
+- The latest binary executables are directly available under  
+https://github.com/go-easygen/emd/releases/latest 
+- Pick & choose the one that suits your OS and its architecture. E.g., for Linux, it would be the `emd_verxx_linux_amd64.tar.gz` file. 
+- Available OS for binary executables are
+  * Linux
+  * Mac OS (darwin)
+  * Windows
+- If your OS and its architecture is not available in the download list, please let me know and I'll add it.
+- The manual installation is just to unpack it and move/copy the binary executable to somewhere in `PATH`. For example,
+
+``` sh
+tar -xvf emd_*_linux_amd64.tar.gz
+sudo mv -v emd_*_linux_amd64/emd /usr/local/bin/
+rmdir -v emd_*_linux_amd64
 ```
 
-#### $ emd init -help
-```sh
-emd - 0.0.0
 
-Command "init": Init a basic emd file.
-  -force
-    	Force write
-  -h	Show help
-  -help
-    	Show help
-  -out string
-    	Out file (default "README.e.md")
-```
+### Distro package
 
-# Cli examples
+- Packages available for Linux distros are
+  * [Alpine Linux](https://cloudsmith.io/~suntong/repos/repo/setup/#formats-alpine)
+  * [Debian](https://cloudsmith.io/~suntong/repos/repo/setup/#formats-deb)
+  * [RedHat](https://cloudsmith.io/~suntong/repos/repo/setup/#formats-rpm)
 
-```sh
+The repo setup instruction url has been given above.
+For example, for [Debian](https://cloudsmith.io/~suntong/repos/repo/setup/#formats-deb) --
 
-# Init a basic emd file to get started.
-emd init
+### Debian package
 
-# Reads content of README.e.md, outputs to README.md
-emd gen -out README.md
-
-# same with data injections,
-emd gen -out README.md --data='{"CsUUID":"xxxx"}'
-
-# use verbose mode
-VERBOSE=y emd gen
-```
-
-# Templates helper
-
-#### Define data
-
-Template data can be defined directly into the `README.e.md` file using a `prelude`,
-
-```yml
----
-title: "Easygen - Easy to use universal code/text generator"
-date: "2016-01-01T22:13:12-05:00"
-categories: ["Tech"]
-tags: ["go","programming","easygen","CLI"]
----
-```
-
-This `prelude` must be inserted right before the regular `md` content.
-
-The keys are injected into the template `dot`, the value are `json` decoded.
-
-Template can access those data using name: `{{.categories}} {{.tags}}`
-
-
-#### Data
-
-| Key | Description |
-| --- | --- |
-| __ProviderURL__ | The vcs provider url (example: github.com). |
-| __ProviderName__ | The vcs provider name (example: github). |
-| __Name__ | Project name based on the cwd (example: emd). |
-| __User__ | User name based on the cwd (example: mh-cbon). |
-| __URL__ | Project url as determined by the cwd (example: github.com/mh-cbon/emd). |
-| __ProjectURL__ | Project url as determined by the cwd + relative path (example: github.com/mh-cbon/emd/cmd). |
-| __Branch__ | Current vcs branch name (defaults to master). |
-
-#### Functions
-
-Functions can be invoked like this `{{func "arg1" "arg2"}}`
-
-Options are keys to define into the `prelude`:
-
-```yaml
----
-emd_cat_pre: "### > "
-emd_gotest_pre: "### $ "
-emd_exec_pre: "### $ "
-emd_shell_pre: "### $ "
----
-```
-
-#### Files functions
-
-| Name | Description | Options |
-| --- | --- | -- |
-| __cat__(f string) | Displays a file header.<br/>Read and return the file body. | `emd_cat_pre: "### > "`: string to show right before the file path. |
-| __read__(f string) | Read and return the file body. |  |
-| __yaml__(f string, keypaths ...string) | Parse given file as yaml, locate given path into the yaml content, yaml re encode it, return its string. |  |
-
-#### Templates functions
-
-| Name | Description | Options |
-| --- | --- | -- |
-| __render__(name string, data interface{}, keyValues ...interface{}) | Render given `template` name, using `data`.<br/> Additionnal data values can be declared using `keyValues ...interface{}` signature, such as <br/>`render("x", data, "key1", "val1", "key2", "val2")`. | | |
-| __set__(name string, x interface{}) | Save given value `x` as `name` on dot `.`. |  |
-
-#### Go utils functions
-
-| Name | Description | Options |
-| --- | --- | -- |
-| __pkgdoc__(files ...string) | Read the first of `files`, or `main.go`, lookup for its package comment and return it as plain text. | |
-| __gotest__(rpkg string, run string, args ...string) | Run `go test <rpkg> -v -run <run> <args>`, return its output. <br/>`rpkg` can be a path to a relative folder like `./emd`. It will resolve to <br/>`github.com/mh-cbon/emd/emd`| `emd_gotest_pre: "### $ "` defines a sring to show right before the `go test` command line. |
-
-#### Markdown functions
-
-| Name | Description | Options |
-| --- | --- | -- |
-| __color__(color string, content string]) string | Embed given content with triple backquote syntax colorizer support. | |
-| __toc__(maxImportance int, title ...string) string | Displays a `TOC` of the `README` file being processed.<br/>`maxImportance` defines the titles to select by their numbers of `#`.<br/>`titles` define the title to display, defaults to `TOC`.<br/>Titles displayed before the call to `{{toc x}}` are automatically ignored.| |
-| __preline__(pre string, content string) string | Prepend every line of `content` with `pre`. |  |
-| __echo__(f string) string | Prints `f`, usefull to print strings which contains the template tokens. |  |
-| __link__(url string, text ...string) string | Prints markdown link. |  |
-| __img__(url string, alt ...string) string | Prints markdown image. |  |
-| __concat__(x ...string) string | Concat all `x`. |  |
-| __pathjoin__(x ...string) string | Join all `x` with `/`. |  |
-
-#### Cli functions
-
-| Name | Description | Options |
-| --- | --- | -- |
-| __exec__(bin string, args ...string) | Display a command line header.<br/>Execute and return its response. | `emd_exec_pre: "### > "`:  string to show right before the command line. |
-| __shell__(s string) | Display a command line header.<br/>Execute the command on a shell, and return the its response. | `emd_shell_pre: "### > "`: string to show right before the command line. |
-
-#### Deprecated function
-
-| Name | Description |
-| --- | --- |
-| __file__(f string[, colorizer string]) | Read and display a file enclosed with triples backquotes. If `colorizer` is empty, it defaults to the file extension. |
-| __cli__(bin string, args ...string) | Execute and display a command line enclosed with triples backquotes. The highlight defaults to `sh`. |
-
-#### Templates
-
-##### std
-
-| Name | Description | Params |
-| --- | --- | --- |
-| __gh/releases__ | Show a text to link the release page. | |
-| __badge/travis__ | Show a travis badge. | |
-| __badge/appveyor__ | Show an appveyor badge. | |
-| __badge/codeship__ | Show a codeship badge. | __CsProjectID__: The codeship project ID (*123465*).<br/> __CsUUID__: the codeship project UUID (*654654-6465-54...*).<br/>Within your `e.md` file use the `render` function, `{{render "badge/codeship" . "CsUUID" "xx" "CsProjectID" "yyy"}}`.<br/>Via cli, add it with `--data '{"CsUUID": "xx", "CsProjectID":"yy"}'`. |
-| __choco_bintray/install__ | Show a snippet to install the package with chocolatey from bintray repos. | __BintrayRepo__: the name of the bintray repo (default: `choco`) |
-| __choco/install__ | Show a snippet to install the package with chocolatey. | |
-| __linux/gh_src_repo__ | Show an sh snippet to install the package via `rpm|deb|apt` repositories hosted on gh-pages. | |
-| __linux/bintray_repo__ | Show an sh snippet to install the package via `rpm|deb|apt` repositories hosted on bintray. | |
-| __linux/gh_pkg__ | Show an sh snippet to install the package via standalone packages (deb/rpm). | |
-| __license/shields__ | Show a license badge. | __License__: The license name like `MIT`, `BSD`.<br/>__LicenseFile__: The path to the license file.<br/>__LicenseColor__: The color of the badge (defaults t o blue). |
-
-##### go
-
-| Name | Description | Params |
-| --- | --- | --- |
-| __go/install__ | Show an sh snippet to install the package via `go get`. | |
-| __badge/godoc__ | Show a godoc badge. | |
-| __badge/goreport__ | Show a goreport badge. | |
-
-##### go-nonstd
-
-| Name | Description | Params |
-| --- | --- | --- |
-| __glide/install__ | Show an sh snippet to install the package via `glide`. | |
-
-
-# API example
-
-#### > main_test.go
-```go
-package main_test
-
-import (
-	"os"
-
-	"github.com/mh-cbon/emd/emd"
-	"github.com/mh-cbon/emd/std"
-)
-
-var projectName = "dummy"
-
-// ExampleGenerate demonstrates the generation
-// of the given README.e.md source file
-// to os.Stdout.
-func Example() {
-
-	// make a new instance of emd.Generator.
-	gen := emd.NewGenerator()
-
-	// set the main template.
-	gen.AddTemplate("{{.Name}}")
-
-	// set the data available in templates.
-	gen.SetDataMap(map[string]interface{}{"Name": projectName})
-
-	// register a plugin
-	if err := std.Register(gen); err != nil {
-		panic(err)
-	}
-
-	// process the template.
-	if err := gen.Execute(os.Stdout); err != nil {
-		panic(err)
-	}
-	// Output: dummy
-}
-```
-
-# Recipes
-
-#### Generate HTML content
-
-To directly generate HTML content out of `emd` output, for example, with `gh-markdown-cli`,
 
 ```sh
-npm install gh-markdown-cli -g
-emd gen | mdown
+curl -1sLf \
+  'https://dl.cloudsmith.io/public/suntong/repo/setup.deb.sh' \
+  | sudo -E bash
+
+# That's it. You then can do your normal operations, like
+
+sudo apt-get update
+apt-cache policy emd
+
+sudo apt-get install -y emd
 ```
 
-#### Release the project
+## Install Source
 
-```sh
-gump patch -d # check
-gump patch # bump
+To install the source code instead:
+
+```
+go get -v -u github.com/go-easygen/emd
 ```
 
-# History
+## Author
 
-[CHANGELOG](CHANGELOG.md)
+Tong SUN  
+![suntong from cpan.org](https://img.shields.io/badge/suntong-%40cpan.org-lightgrey.svg "suntong from cpan.org")
+
+_Powered by_ [**WireFrame**](https://github.com/go-easygen/wireframe)  
+[![PoweredBy WireFrame](https://github.com/go-easygen/wireframe/blob/master/PoweredBy-WireFrame-Y.svg)](http://godoc.org/github.com/go-easygen/wireframe)  
+the _one-stop wire-framing solution_ for Go cli based projects, from _init_ to _deploy_.
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/suntong"><img src="https://avatars.githubusercontent.com/u/422244?v=4?s=100" width="100px;" alt=""/><br /><sub><b>suntong</b></sub></a><br /><a href="https://github.com/go-cc/cc2py2/commits?author=suntong" title="Code">💻</a> <a href="#ideas-suntong" title="Ideas, Planning, & Feedback">🤔</a> <a href="#design-suntong" title="Design">🎨</a> <a href="#data-suntong" title="Data">🔣</a> <a href="https://github.com/go-cc/cc2py2/commits?author=suntong" title="Tests">⚠️</a> <a href="https://github.com/go-cc/cc2py2/issues?q=author%3Asuntong" title="Bug reports">🐛</a> <a href="https://github.com/go-cc/cc2py2/commits?author=suntong" title="Documentation">📖</a> <a href="#blog-suntong" title="Blogposts">📝</a> <a href="#example-suntong" title="Examples">💡</a> <a href="#tutorial-suntong" title="Tutorials">✅</a> <a href="#tool-suntong" title="Tools">🔧</a> <a href="#platform-suntong" title="Packaging/porting to new platform">📦</a> <a href="https://github.com/go-cc/cc2py2/pulls?q=is%3Apr+reviewed-by%3Asuntong" title="Reviewed Pull Requests">👀</a> <a href="#question-suntong" title="Answering Questions">💬</a> <a href="#maintenance-suntong" title="Maintenance">🚧</a> <a href="#infra-suntong" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
