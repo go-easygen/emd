@@ -17,12 +17,12 @@ Enhanced Markdown template processor.
 - [Usage](#usage)
   - [$ emd](#-emd)
   - [Examples](#examples)
+- [Install Debian/Ubuntu package](#install-debianubuntu-package)
 - [Download/install binaries](#downloadinstall-binaries)
   - [The binary executables](#the-binary-executables)
   - [Distro package](#distro-package)
   - [Debian package](#debian-package)
 - [Install Source](#install-source)
-- [Author](#author)
 - [Contributors](#contributors-)
 
 ## emd - Enhanced Markdown template processor
@@ -49,6 +49,10 @@ Commands
 ### Examples
 
 For examples and further details, check out the [original README](https://github.com/mh-cbon/emd).
+
+## Install Debian/Ubuntu package
+
+    apt install emd
 
 ## Download/install binaries
 
@@ -112,14 +116,6 @@ To install the source code instead:
 go get -v -u github.com/go-easygen/emd
 ```
 
-## Author
-
-Tong SUN  
-![suntong from cpan.org](https://img.shields.io/badge/suntong-%40cpan.org-lightgrey.svg "suntong from cpan.org")
-
-_Powered by_ [**WireFrame**](https://github.com/go-easygen/wireframe)  
-[![PoweredBy WireFrame](https://github.com/go-easygen/wireframe/blob/master/PoweredBy-WireFrame-Y.svg)](http://godoc.org/github.com/go-easygen/wireframe)  
-the _one-stop wire-framing solution_ for Go cli based projects, from _init_ to _deploy_.
 
 ## Contributors ✨
 
