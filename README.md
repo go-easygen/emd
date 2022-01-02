@@ -116,7 +116,6 @@ To install the source code instead:
 go get -v -u github.com/go-easygen/emd
 ```
 
-
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
